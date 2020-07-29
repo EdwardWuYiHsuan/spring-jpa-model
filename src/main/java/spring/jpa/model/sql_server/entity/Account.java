@@ -8,17 +8,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import spring.jpa.model.entity.PhoneEntity;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
-@AllArgsConstructor
+@SuperBuilder  // Create Builder with Inheritance, Way-2
 @Entity
 @Table(name = "account")
 public class Account extends PhoneEntity {
@@ -34,12 +33,12 @@ public class Account extends PhoneEntity {
 	@NotNull
 	private Character sex;
 
-	@Builder
-	public Account(Long id, String name, Character sex, String phone) {
-		super(phone);
-		this.id = id;
-		this.name = name;
-		this.sex = sex;
-	}
+//	@Builder   // Create Builder with Inheritance, Way-1
+//	public Account(Long id, String name, Character sex, String phone) {
+//		super(phone);
+//		this.id = id;
+//		this.name = name;
+//		this.sex = sex;
+//	}
 
 }
