@@ -3,25 +3,24 @@ package spring.jpa.model.oracle.dao.impl;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Repository;
-
+import lombok.AllArgsConstructor;
 import spring.jpa.model.dao.AccountDao;
 import spring.jpa.model.dto.AccountDto;
 import spring.jpa.model.oracle.entity.Account;
 import spring.jpa.model.oracle.repository.AccountRepository;
 
 @Repository
+@AllArgsConstructor
 public class AccountDaoImpl implements AccountDao {
 
 	private final AccountRepository accountRepo;
 
-	@Autowired
-	public AccountDaoImpl(AccountRepository accountRepo) {
-		this.accountRepo = accountRepo;
-	}
+//	@Autowired
+//	public AccountDaoImpl(AccountRepository accountRepo) {
+//		this.accountRepo = accountRepo;
+//	}
 
 	@Override
 	public boolean existsById(Long id)

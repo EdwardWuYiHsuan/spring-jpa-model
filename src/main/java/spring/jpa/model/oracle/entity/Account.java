@@ -15,7 +15,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import spring.jpa.model.entity.PhoneEntity;
 
-
 @Data
 @EqualsAndHashCode(callSuper = true)
 @NoArgsConstructor
