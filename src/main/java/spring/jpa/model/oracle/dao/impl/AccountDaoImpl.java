@@ -32,7 +32,7 @@ public class AccountDaoImpl implements AccountDao {
 	public List<AccountDto> findAll(Sort sort)
 	{
 		List<Account> list = accountRepo.findAll(sort);
-		return list.stream().map(e -> AccountDto.valueOf(e)).collect(Collectors.toList());
+		return list.stream().map(AccountDto::valueOf).collect(Collectors.toList());
 	}
 
 	@Override
