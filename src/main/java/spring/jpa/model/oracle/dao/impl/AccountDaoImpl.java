@@ -39,11 +39,7 @@ public class AccountDaoImpl implements AccountDao {
 	public Optional<AccountDto> findById(Long id)
 	{
 		Optional<Account> accountOpt = accountRepo.findById(id);
-		if (accountOpt.isPresent()) {
-			return Optional.of(AccountDto.valueOf(accountOpt.get()));
-		} else {
-			return Optional.empty();
-		}
+		return accountOpt.map(AccountDto::valueOf);
 	}
 
 	@Override
