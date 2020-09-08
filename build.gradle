@@ -29,6 +29,11 @@ repositories {
 	mavenCentral()
 }
 
+configurations {
+    compile.exclude module: "spring-boot-starter-tomcat"
+    compile.exclude module: "spring-boot-starter-logging"
+}
+
 dependencies {
 
 	// External library

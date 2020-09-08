@@ -16,3 +16,4 @@ create table account (
 	sex char(1) not null,
 	phone varchar(20) default null
 );
+go

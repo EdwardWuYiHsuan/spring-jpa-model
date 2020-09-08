@@ -9,18 +9,12 @@ import lombok.AllArgsConstructor;
 import spring.jpa.model.dao.AccountDao;
 import spring.jpa.model.dto.AccountDto;
 import spring.jpa.model.oracle.entity.Account;
-import spring.jpa.model.oracle.repository.AccountRepository;
 
 @Repository
 @AllArgsConstructor
 public class AccountDaoImpl implements AccountDao {
 
-	private final AccountRepository accountRepo;
-
-//	@Autowired
-//	public AccountDaoImpl(AccountRepository accountRepo) {
-//		this.accountRepo = accountRepo;
-//	}
+	private final spring.jpa.model.oracle.repository.AccountRepository accountRepo;
 
 	@Override
 	public boolean existsById(Long id)
